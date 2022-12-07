@@ -3,6 +3,9 @@ import './App.css';
 import Form from './components/Form';
 import UserList from './components/UserList';
 
+const BASE_URL = "https://user-crud-production.up.railway.app"
+
+
 function App() {
   return (
     <div className="App">
@@ -22,8 +25,8 @@ function App() {
       </header> */}
 
    
-      <Form />
-      <UserList />
+      <Form BASE_URL={BASE_URL} />
+      <UserList BASE_URL={BASE_URL} />
     </div>
   );
 }

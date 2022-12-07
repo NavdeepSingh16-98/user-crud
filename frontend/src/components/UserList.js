@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react'
 import axios from 'axios'
 
-function UserList(){
+function UserList({BASE_URL}){
 
 const [users,setUsers] = useState(null);
   async  function FetchUser(){
@@ -9,7 +9,7 @@ console.log('fetch user called');
         const options = {
             method:'GET'
         }
-const {data} = await axios('/getUsers',options)
+const {data} = await axios(`${BASE_URL}/getUsers`,options)
 
 setUsers(data.users)
 
@@ -32,7 +32,7 @@ async function editUser(user,data){
 
 
    // debugger;
-    const response = await axios.put(`/editUser/${user._id}`,data);
+    const response = await axios.put(`${BASE_URL}/editUser/${user._id}`,data);
 
     alert(response.data.message);
 
@@ -54,7 +54,7 @@ const options = {
     method:'DELETE'
 }
 
-    const response = await axios(`/deleteUser/${user._id}`,options);
+    const response = await axios(`${BASE_URL}/deleteUser/${user._id}`,options);
 
     alert(response.data.message);
     FetchUser();

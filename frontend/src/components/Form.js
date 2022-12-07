@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import axios from 'axios'
 
-function Form(){
+function Form({BASE_URL}){
 
 const [name,setName] = useState('');
 
@@ -28,7 +28,7 @@ const options = {
     method:'POST',
     data:data
 }
-    const response = await axios('/create',options)
+    const response = await axios(`${BASE_URL}/create`,options)
 
     alert(response.data.message);
 }
