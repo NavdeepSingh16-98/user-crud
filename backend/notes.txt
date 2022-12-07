@@ -1,0 +1,51 @@
+/createUser
+user will send name and email
+
+we will check if email and name are not empty
+
+
+we will try to find the user using email in the database
+
+
+if user already exist , throw error email already  exist
+
+if not , create a user
+
+and send - success, message and user object
+
+/getUsers
+
+
+no need of any input from user , just use User.find() it will give us all getUsers
+
+return json with success = true , and all users json
+
+
+/ editUser/:id
+
+in this api user will send id as a url parameter
+
+also user will send a body containing name and email
+
+now we will use findByIdandUpdate(req.params.id,req.body);
+
+similarily to send the json we will send success : true and message:user updated successfully
+
+if fails,
+
+we will send 
+
+success:false, message:error.message
+
+/deleteUser/:id
+
+
+this api is similar to edit user, here we will use
+
+findByIdandDelete(req.params.id);
+
+response will be same as 
+
+success:true
+message:"User deleted successfully"
+
