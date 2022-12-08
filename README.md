@@ -21,4 +21,50 @@
 
 ### Using this application, we can -
 ### Create User, Edit User, Update User, Delete User
+
+![](./images/user-crud.png)
+
+
+[Live Link](https://navdeep-user-crud.netlify.app/)
  
+
+ ### API Designs
+
+  #### Get All User API
+
+ ```Javascript
+
+ url - '/'
+
+ ```
+
+ #### Create User API
+
+ ```Javascript
+
+ url - '/create'
+
+ json accepted -{
+
+  "name":"string",
+  "email":"string"
+ }
+ 
+
+ ```
+
+ #### Edit User API
+
+ ```Javascript
+
+ url - '/editUser/:id'
+
+ ```
+
+  #### Delete User API
+
+ ```Javascript
+
+ url - '/deleteUser/:id'
+
+ ```
